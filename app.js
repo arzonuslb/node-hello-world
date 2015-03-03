@@ -15,6 +15,8 @@ var server = app.listen(3000, function () {
 
 });
 
+console.log('try get redis');
+
 var _redis = require('redis');
 
 var host = process.env.REDIS_HOST || 'redis-1.demo.dev';
@@ -22,6 +24,7 @@ var port = process.env.REDIS_PORT || '6379';
 var db = process.env.REDIS_DB     || 0;
 
 console.log('try to connect');
+
 var connection = _redis.createClient(port, host);
 
 connection.on('connect', function () {
