@@ -15,3 +15,22 @@ var server = app.listen(3000, function () {
 
 });
 
+var _redis = require('redis');
+
+var host = process.env.REDIS_HOST || '127.0.0.1';
+var port = process.env.REDIS_PORT || '6379';
+var db = process.env.REDIS_DB     || 0;
+
+var connection = _redis.createClient(port, host);
+
+connection.on('connect', function () {
+  console.log('redis connected', host, port, 'database:', db);
+});
+
+connection.on('error', function (err) {
+  console.log(err);
+});
+
+connection.on('close', function(){
+  console.log('close redis connection');
+});
