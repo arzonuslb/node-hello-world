@@ -15,6 +15,3 @@ var server = app.listen(3000, function () {
 
 });
 
-setInterval(function (){
-  console.log(new Date());
-}, 1000);
