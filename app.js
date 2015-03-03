@@ -5,7 +5,6 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-console.log(process.env.DEMO);
 
 var server = app.listen(3000, function () {
 
@@ -15,3 +14,7 @@ var server = app.listen(3000, function () {
   console.log('Example app listening at http://%s:%s', host, port);
 
 });
+
+setInterval(function (){
+  console.log(new Date());
+}, 1000);
