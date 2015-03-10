@@ -17,31 +17,16 @@ var server = app.listen(3000, function () {
 });
 console.log('--------');
 var dns = require('dns');
-
-dns.resolve4('redis-1.demo.dev', function (err, addresses) {
-  if (err) throw err;
-
-  console.log('addresses: ' + JSON.stringify(addresses));
-
-  addresses.forEach(function (a) {
-    dns.reverse(a, function (err, hostnames) {
-      if (err) {
-        throw err;
-      }
-
-      console.log('reverse for ' + a + ': ' + JSON.stringify(hostnames));
-    });
-  });
-});
-
+console.log(dns.getServers());
 console.log('--------');
-console.log('create client: redis-1.demo.dev' );
-var redis = require("redis"), client = redis.createClient(6379, 'redis-1.demo.dev', {});
 
-client.on('connect', function (){
-  console.log('connect');
-});
+// console.log('create client: redis-1.demo.dev' );
+// var redis = require("redis"), client = redis.createClient(6379, 'redis-1.demo.dev', {});
 
-client.on("error", function (err) {
-    console.log("error event - " + client.host + ":" + client.port + " - " + err);
-});
+// client.on('connect', function (){
+//   console.log('connect');
+// });
+
+// client.on("error", function (err) {
+//     console.log("error event - " + client.host + ":" + client.port + " - " + err);
+// });
