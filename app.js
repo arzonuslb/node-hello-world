@@ -15,3 +15,13 @@ var server = app.listen(3000, function () {
   console.log('Example app listening at http://%s:%s', host, port);
 
 });
+
+var redis = require("redis"), client = redis.createClient(6379, '127.0.0.1', {});
+
+client.on('connect', function (){
+  console.log('connect');
+});
+
+client.on("error", function (err) {
+    console.log("error event - " + client.host + ":" + client.port + " - " + err);
+});
