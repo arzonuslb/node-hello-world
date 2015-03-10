@@ -17,7 +17,9 @@ var server = app.listen(3000, function () {
 });
 console.log('--------');
 var dns = require('dns');
-console.log(dns.getServers());
+dns.lookup('redis-1.demo.dev', function (err, address, family){
+  console.log(err, address, family);
+});
 console.log('--------');
 
 // console.log('create client: redis-1.demo.dev' );
