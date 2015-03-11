@@ -20,7 +20,7 @@ console.log('create client: redis-1.demo.dev' );
 var redis = require("redis"), client = redis.createClient(6380, 'redis-1.demo.dev', {});
 
 client.on('connect', function (){
-  console.log('connect');
+  console.log('connected to Redis: redis-1.demo.dev');
 });
 
 client.on("error", function (err) {
