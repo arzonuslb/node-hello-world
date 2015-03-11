@@ -15,20 +15,14 @@ var server = app.listen(3000, function () {
   console.log('Example app listening at http://%s:%s', host, port);
 
 });
-console.log('--------');
-var dns = require('dns');
-dns.lookup('redis-1.demo.dev', function (err, address, family){
-  console.log(err, address, family);
+
+console.log('create client: redis-1.demo.dev' );
+var redis = require("redis"), client = redis.createClient(6380, 'redis-1.demo.dev', {});
+
+client.on('connect', function (){
+  console.log('connect');
 });
-console.log('--------');
 
-// console.log('create client: redis-1.demo.dev' );
-// var redis = require("redis"), client = redis.createClient(6379, 'redis-1.demo.dev', {});
-
-// client.on('connect', function (){
-//   console.log('connect');
-// });
-
-// client.on("error", function (err) {
-//     console.log("error event - " + client.host + ":" + client.port + " - " + err);
-// });
+client.on("error", function (err) {
+  console.log("error event - " + client.host + ":" + client.port + " - " + err);
+});
