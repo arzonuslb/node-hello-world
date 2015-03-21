@@ -16,7 +16,7 @@ var server = app.listen(3000, function () {
 
 });
 
-console.log('create client: redis-1.demo.dev' );
+console.log('connect to client: redis-1.demo.dev' );
 var redis = require("redis"), client = redis.createClient(6380, 'redis-1.demo.dev', {});
 
 client.on('connect', function (){
