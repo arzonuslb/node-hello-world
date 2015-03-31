@@ -16,11 +16,11 @@ var server = app.listen(3000, function () {
 
 });
 
-console.log('connect to client: redis-1.demo.dev' );
-var redis = require("redis"), client = redis.createClient(6380, 'redis-1.demo.dev', {});
+console.log('connect to client: redis-1.domain.dev' );
+var redis = require("redis"), client = redis.createClient(6380, 'redis-1.domain.dev', {});
 
 client.on('connect', function (){
-  console.log('connected to Redis: redis-1.demo.dev');
+  console.log('connected to Redis: redis-1.domain.dev');
 });
 
 client.on("error", function (err) {
