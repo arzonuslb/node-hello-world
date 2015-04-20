@@ -29,7 +29,3 @@ client.on('connect', function (){
     console.log('authenticated');
   })
 });
-
-client.on("error", function (err) {
-  console.log("error event - " + client.host + ":" + client.port + " - " + err);
-});
