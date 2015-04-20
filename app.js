@@ -16,16 +16,14 @@ var server = app.listen(3000, function () {
 
 });
 
-var host = process.env.REDIS_HOST;
+/*var host = process.env.REDIS_HOST;
 var port = process.env.REDIS_PORT;
 console.log('connect to client: ', host, ":", port );
 var redis = require("redis"), client = redis.createClient(port, host);
-
-
 
 client.on('connect', function (){
   console.log('connected to Redis');
   client.auth(process.env.REDIS_AUTH, function (){
     console.log('authenticated');
   })
-});
+});*/
