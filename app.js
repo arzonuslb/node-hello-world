@@ -16,7 +16,7 @@ var server = app.listen(3000, function () {
   console.log('Example app listening');
 
 });
-
+/*
 var host = process.env.REDIS_HOST;
 var port = process.env.REDIS_PORT;
 console.log('connect to client: ', host, ":", port );
@@ -28,3 +28,4 @@ client.on('connect', function (){
     console.log('authenticated');
   })
 });
+*/
