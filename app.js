@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
-
+var i = 0;
 app.get('/', function (req, res) {
-  console.log('demo');
-  res.send('Hello World #1!');
+  console.log('request #',i);
+  res.send('Hello World #', i);
 });
 
 console.log('Hello world: Demo test');
