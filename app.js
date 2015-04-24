@@ -3,8 +3,12 @@ var app = express();
 var i = 0;
 app.get('/', function (req, res) {
   console.log('request #',i);
-  res.send('Hello World #', i);
+  client.get('foo',function(err, data){
+    console.log(err, data);
+    res.send('Hello World #', i);
+  });
   i++;
+  client.set('foo',i);
 });
 
 console.log('Hello world: Demo test');
@@ -25,8 +29,4 @@ var redis = require("redis"), client = redis.createClient(port, host);
 client.auth(process.env.REDIS_AUTH);
 client.on('connect', function (){
   console.log('connected to Redis');
-  client.set('foo','bar');
-  client.get('foo',function(err, data){
-    console.log(err, data);
-  });
 });
