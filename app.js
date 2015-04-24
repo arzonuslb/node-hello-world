@@ -4,7 +4,7 @@ var i = 0;
 app.get('/', function (req, res) {
   console.log('request #',i);
   client.get('foo',function(err, data){
-    res.send('Hello World #'+i);
+    res.json({'status':i});
   });
   i++;
   client.set('foo',i);
