@@ -25,7 +25,9 @@ var redis = require("redis"), client = redis.createClient(port, host);
 
 client.on('connect', function (){
   console.log('connected to Redis');
-  client.auth(process.env.REDIS_AUTH, function (){
-    console.log('authenticated');
-  })
+  client.auth(process.env.REDIS_AUTH);
+  client.set('foo','bar');
+  client.get('foo',function(err, data){
+    console.log(err, data);
+  });
 });
