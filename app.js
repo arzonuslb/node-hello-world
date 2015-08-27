@@ -3,11 +3,6 @@ var app = express();
 var i = 0;
 app.get('/', function (req, res) {
   console.log('request #',i);
-  client.get('foo',function(err, data){
-    res.json({'status':'online', 'request':i});
-  });
-  i++;
-  client.set('foo',i);
 });
 
 console.log('Hello world: Demo test');
