@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
   i++;
 });
 
-console.log('Hello world: Demo test');
+console.log('Hello world');
 
 
 var server = app.listen(3000, function () {
