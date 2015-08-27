@@ -3,6 +3,7 @@ var app = express();
 var i = 0;
 app.get('/', function (req, res) {
   console.log('request #',i);
+  res.send({request: i});
 });
 
 console.log('Hello world: Demo test');
