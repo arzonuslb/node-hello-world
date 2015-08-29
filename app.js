@@ -2,9 +2,6 @@ var express = require('express');
 var app = express();
 var i = 1;
 
-
-
-
 app.get('/', function (req, res) {
   console.log('request #',i);
   res.send({request: i, state: 3});
