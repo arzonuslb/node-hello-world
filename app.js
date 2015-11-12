@@ -32,6 +32,7 @@ var db   = process.env.REDIS_DB;
 
 console.log('connect to client: ', host, ":", port );
 /**
+ * 
 var redis = require("redis"), client = redis.createClient(port, host);
 
 client.on('connect', function (){
