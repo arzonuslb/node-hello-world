@@ -28,11 +28,10 @@ var server = app.listen(3000, function () {
 
 var host = process.env.REDIS_HOST;
 var port = process.env.REDIS_PORT;
-var db   = process.env.REDIS_DB;
+var db   = process.env.REDIS_DB || 0;
 
 console.log('connect to client: ', host, ":", port );
-/**
- * 
+
 var redis = require("redis"), client = redis.createClient(port, host);
 
 client.on('connect', function (){
@@ -40,4 +39,3 @@ client.on('connect', function (){
   console.log('connected to Redis');
   client.select(db || 0);
 });
-*/
