@@ -4,6 +4,7 @@ var i = 1;
 app.get('/', function (req, res) {
   console.log('request #',i);
   res.send({request: i, state:1});
+  i++;
 });
 
 console.log('Hello world');
