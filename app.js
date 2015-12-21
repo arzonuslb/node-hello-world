@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var i = 1;
+var i = 5;
 app.get('/', function (req, res) {
   console.log('request #',i);
   res.send({request: i, state:1});
