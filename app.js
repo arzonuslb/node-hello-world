@@ -1,14 +1,13 @@
 var express = require('express');
 var app = express();
-var i = 1;
-
+var i = 5;
 app.get('/', function (req, res) {
   console.log('request #',i);
-  res.send({request: i, state: 3});
+  res.send({request: i, state:1});
   i++;
 });
 
-console.log('Hello world: Demo test');
+console.log('Hello world');
 
 var server = app.listen(3000, function () {
 
@@ -19,17 +18,3 @@ var server = app.listen(3000, function () {
   console.log('test');
 
 });
-
-
-var host = process.env.REDIS_HOST;
-var port = process.env.REDIS_PORT;
-
-console.log('connect to client: ', host, ":", port );
-/* 
-var redis = require("redis"), client = redis.createClient(port, host);
-client.auth(process.env.REDIS_AUTH);
-client.on('connect', function (){
-
-  console.log('connected to Redis');
-});
-*/
